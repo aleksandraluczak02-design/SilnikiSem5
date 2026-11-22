@@ -10,7 +10,7 @@ public class PlayerCoins : MonoBehaviour
     void Start()
     {
         coin = 0;
-        OnCoinInnit.Invoke(coin);
+        OnCoinInnit?.Invoke(coin);
     }
 
     // Update is called once per frame
@@ -18,8 +18,9 @@ public class PlayerCoins : MonoBehaviour
     {
 
     }
-    public void AddCoin(int CoinToAdd)
+    public void AddCoin(int coinToAdd)
     {
-        coin += CoinToAdd;
+        coin += coinToAdd;
+        OnCoinInnit?.Invoke(coin);
     }
 }
